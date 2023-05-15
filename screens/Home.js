@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
       const jsonValue = await AsyncStorage.getItem('eventList')
       const data = jsonValue != null ? JSON.parse(jsonValue) : [];
       setEvents(data)
-      console.log('events', events);
+      console.log('events', data);
     } catch(e) {
       // error reading value
       console.log(e);
@@ -55,7 +55,8 @@ export default Home
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10
+    marginHorizontal: 10,
+    flex: 1
   },
   header: {
     flexDirection: 'row',
@@ -80,6 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   list: {
+    flex: 1,
     marginBottom: 10
   }
 })
